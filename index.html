@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aviso Importante</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
+            color: #333;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        .aviso {
+            position: relative;
+            border: 6px solid transparent;
+            border-radius: 20px;
+            padding: 25px;
+            font-size: 1.7rem;
+            font-weight: 600;
+            max-width: 650px;
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(10px);
+            animation: glow 3s infinite alternate;
+        }
+
+        .aviso::before {
+            content: "";
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border-radius: 25px;
+            background: linear-gradient(45deg, #ff9ff3, #feca57, #48dbfb, #1dd1a1, #ff9ff3);
+            background-size: 300% 300%;
+            animation: borderAnimation 4s infinite linear;
+            filter: blur(10px);
+            z-index: -1;
+        }
+
+        @keyframes borderAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes glow {
+            0% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); }
+            100% { box-shadow: 0 0 35px rgba(255, 255, 255, 0.7); }
+        }
+
+        .icon {
+            font-size: 2.5rem;
+            display: block;
+            margin-bottom: 15px;
+        }
+    </style>
+    <script>
+        setTimeout(function() {
+            window.location.href = "https://hyexshop.craftingstore.net/";
+        }, 5000);
+    </script>
+</head>
+<body>
+    <div class="aviso">
+        <span class="icon">⚠️📩✨</span>
+        AL MOMENTO DE HACER UNA COMPRA, TUS PRODUCTOS SERÁN ENVIADOS AL CORREO QUE UTILIZASTE EN PAYPAL.
+    </div>
+</body>
+</html>
