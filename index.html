@@ -4,17 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aviso Importante</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-
         body {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
-            color: #333;
-            font-family: 'Poppins', sans-serif;
+            background: url('https://i.imgur.com/YOUR_IMAGE.jpg') no-repeat center center/cover;
+            color: #fff;
+            font-family: 'Dela Gothic One', sans-serif;
             text-align: center;
             padding: 20px;
             overflow: hidden;
@@ -22,74 +23,48 @@
 
         .aviso {
             position: relative;
-            border: 6px solid transparent;
+            border: 4px solid #000;
             border-radius: 20px;
             padding: 25px;
-            font-size: 1.7rem;
-            font-weight: 600;
+            font-size: 1.5rem;
             max-width: 650px;
-            background: rgba(255, 255, 255, 0.8);
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
-            backdrop-filter: blur(10px);
-            animation: glow 3s infinite alternate;
-        }
-
-        .aviso::before {
-            content: "";
-            position: absolute;
-            top: -5px;
-            left: -5px;
-            right: -5px;
-            bottom: -5px;
-            border-radius: 25px;
-            background: linear-gradient(45deg, #ff9ff3, #feca57, #48dbfb, #1dd1a1, #ff9ff3);
-            background-size: 300% 300%;
-            animation: borderAnimation 4s infinite linear;
-            filter: blur(10px);
-            z-index: -1;
-        }
-
-        @keyframes borderAnimation {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        @keyframes glow {
-            0% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); }
-            100% { box-shadow: 0 0 35px rgba(255, 255, 255, 0.7); }
+            background: rgba(0, 0, 0, 0.85);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px);
         }
 
         .icon {
-            font-size: 2.5rem;
+            font-size: 2rem;
             display: block;
             margin-bottom: 15px;
         }
 
-       <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Hyex Shop">
-    <meta property="og:description" content="la tienda en línea donde encontrarás los mejores servicios de streaming a precios inigualables.  Desde Netflix, Disney+, HBO Max y Spotify hasta muchas más plataformas, ofrecemos cuentas premium a precios accesibles para que disfrutes de tu contenido favorito sin gastar de más. ">
-    <meta property="og:image" content="https://i.imgur.com/rQXRme7.png">
-    <meta property="og:url" content="https://hyex-ivory.vercel.app/">
-    <meta property="og:type" content="website">
-
-    <!-- Twitter Card (opcional para Twitter) -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Hyex Shop">
-    <meta name="twitter:description" content="la tienda en línea donde encontrarás los mejores servicios de streaming a precios inigualables.  Desde Netflix, Disney+, HBO Max y Spotify hasta muchas más plataformas, ofrecemos cuentas premium a precios accesibles para que disfrutes de tu contenido favorito sin gastar de más. ">
-    <meta name="twitter:image" content="https://i.imgur.com/rQXRme7.png">
+        .contador {
+            font-size: 2rem;
+            margin-top: 15px;
+            color: #f1c40f;
+        }
 
     </style>
     <script>
-        setTimeout(function() {
-            window.location.href = "https://hyexshop.craftingstore.net/";
-        }, 5000);
+        let count = 5;
+        function updateCounter() {
+            document.getElementById("contador").textContent = count;
+            if (count === 0) {
+                window.location.href = "https://hyexshop.craftingstore.net/";
+            } else {
+                count--;
+                setTimeout(updateCounter, 1000);
+            }
+        }
+        window.onload = updateCounter;
     </script>
 </head>
 <body>
     <div class="aviso">
         <span class="icon">⚠️📩✨</span>
         AL MOMENTO DE HACER UNA COMPRA, TUS PRODUCTOS SERÁN ENVIADOS AL CORREO QUE UTILIZASTE EN PAYPAL.
+        <div class="contador" id="contador">5</div>
     </div>
 </body>
 </html>
